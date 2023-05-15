@@ -1002,6 +1002,7 @@ module.exports = {
         'limeclick': '#4D7C0F',
         'light-black': '#0E0D0D',
         'black': '#0D0000',
+        'rect-black': '#0C0C0C',
         'gray': '#D1D5DB',
         'white': '#FFFFFF',
         'light-gray': '#E5E7EB'

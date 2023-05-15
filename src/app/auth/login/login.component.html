@@ -1,0 +1,91 @@
+<!-- <section class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto">
+        <div href="#" class="flex items-center mb-6 text-xl font-normal text-gray-900 dark:text-white">
+            LOGIN
+        </div>
+        <div
+            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <form class="space-y-4 md:space-y-6" action="#">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                            email</label>
+                        <input type="email" name="email" id="email"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="name@company.com" required="">
+                    </div>
+                    <div>
+                        <label for="password"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            required="">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="remember" aria-describedby="remember" type="checkbox"
+                                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                                    required="">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot
+                            password?</a>
+                    </div>
+                    <button type="submit"
+                        class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
+                        in</button>
+                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                        Don’t have an account yet? <a href="#"
+                            class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<div class="text-black flex flex-col items-center justify-center h-full text-gray-700 mb-16 mt-8">
+
+    <!-- Component Start -->
+    <h1 class="font-base text-2xl text-white">LOGIN</h1>
+    <form class="flex flex-col bg-rect-black border-2 border-light-gray shadow-lg p-12 mt-12 mr-5 ml-5 sm:mr-0 sm:ml-0"
+        action="">
+        <label class="font-base text-xl text-lime" for="usernameField">Email</label>
+        <input class="flex items-center h-10 px-2 w-70 bg-gray mt-2 text-sm focus:outline-none focus:ring-2" type="text"
+            placeholder="Enter your email">
+        <label class="font-base text-xl text-lime mt-3" for="passwordField">Password</label>
+        <input class="flex items-center h-10 px-2 w-70 bg-gray mt-2 text-sm focus:outline-none focus:ring-2"
+            type="password" placeholder="Enter your password">
+        <div class="sm:flex sm:items-center ml-auto mr-auto mt-5 mb-5 group">
+            <button class="w-22 h-8 bg-lime text-black flex items-center justify-center group-hover:bg-black">
+                <span class="mx-auto relative text-xs group-hover:text-lime group-active:text-limeclick">REGISTER</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="black"
+                    class="md:ml-14 w-12 h-10 ml-12 absolute opacity-10 group-hover:opacity-20 group-hover:stroke-lime group-active:stroke-limeclick">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+            </button>
+        </div>
+        <div class="text-white text-md">
+            DON'T HAVE AN ACCOUNT ?
+            <svg id="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+            <a href="#" class="text-lime text-lg hover:text-white active:text-limeclick">
+                REGISTER
+            </a>
+        </div>
+        <div class="flex mt-5 justify-center">
+            <div>
+                <img alt="color" src="assets/images/logo-white.png" class="ml-3 sm:ml-0 h-7 sm:h-7 md:h-8">
+            </div>
+        </div>
+    </form>
+</div>
