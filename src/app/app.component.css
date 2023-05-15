@@ -1,3 +1,16 @@
 body {
-    font-family: 'Aldrich', 'sans-serif';
+  font-family: 'Aldrich', 'sans-serif';
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }

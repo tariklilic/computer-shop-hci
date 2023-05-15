@@ -1,3 +1,7 @@
-<body class="h-screen w-full bg-light-black">
-  <app-navbar></app-navbar>
+<body class="flex flex-col min-h-screen w-full bg-light-black">
+  <div class="content-container">
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer class="footer"></app-footer>
 </body>
