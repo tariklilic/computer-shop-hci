@@ -846,6 +846,7 @@ module.exports = {
       75: '18.75rem',
       80: '20rem',
       96: '24rem',
+      106: '25rem',
       112: '26rem',
     },
     stroke: ({ theme }) => ({
