@@ -15,8 +15,8 @@ import { CarouselItemComponent } from './homepage/carousel-item/carousel-item.co
 import { HttpClientModule } from '@angular/common/http';
 import { ResponsiveCarouselComponent } from './homepage/responsive-carousel/responsive-carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { ItemComponent } from './homepage/item/item.component';
-import { PaginationComponent } from './homepage/pagination/pagination.component';
+import { ItemComponent } from './item/item.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
