@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultsComponent implements OnInit {
 
+  appItems: any[] = Array(10).fill({});
+
   constructor() { }
 
   ngOnInit(): void {
