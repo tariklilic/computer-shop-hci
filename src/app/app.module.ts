@@ -20,6 +20,8 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SortFilterComponent } from './search-results/sort-filter/sort-filter.component';
 import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,13 +40,15 @@ import { CartComponent } from './cart/cart.component';
     SearchResultsComponent,
     SortFilterComponent,
     CartComponent,
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
