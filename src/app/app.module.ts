@@ -22,6 +22,8 @@ import { SortFilterComponent } from './search-results/sort-filter/sort-filter.co
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { FormsModule } from '@angular/forms';
     SortFilterComponent,
     CartComponent,
     CartItemComponent,
+    ProfileComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
