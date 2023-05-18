@@ -10,6 +10,11 @@ import { LoginComponent } from './auth/login/login.component';
 import { RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { FaqComponent } from './faq/faq.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { CarouselItemComponent } from './homepage/carousel-item/carousel-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ResponsiveCarouselComponent } from './homepage/responsive-carousel/responsive-carousel.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -19,12 +24,17 @@ import { FaqComponent } from './faq/faq.component';
     RegisterComponent,
     LoginComponent,
     AboutusComponent,
-    FaqComponent
+    FaqComponent,
+    HomepageComponent,
+    CarouselItemComponent,
+    ResponsiveCarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
