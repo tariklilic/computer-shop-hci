@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
+  appItems: any[] = Array(10).fill({});
+
   constructor() {
 
   }
