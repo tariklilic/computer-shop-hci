@@ -1011,7 +1011,8 @@ module.exports = {
         'rect-black': '#0C0C0C',
         'gray': '#D1D5DB',
         'white': '#FFFFFF',
-        'light-gray': '#E5E7EB'
+        'light-gray': '#E5E7EB',
+        'dark-gray': '#94989F'
       }
     },
   },

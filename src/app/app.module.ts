@@ -17,6 +17,8 @@ import { ResponsiveCarouselComponent } from './homepage/responsive-carousel/resp
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ItemComponent } from './item/item.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { SortFilterComponent } from './search-results/sort-filter/sort-filter.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     ResponsiveCarouselComponent,
     ItemComponent,
     PaginationComponent,
+    SearchResultsComponent,
+    SortFilterComponent,
   ],
   imports: [
     BrowserModule,
