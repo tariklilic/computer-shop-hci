@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ResponsiveCarouselComponent } from './homepage/responsive-carousel/responsive-carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ItemComponent } from './homepage/item/item.component';
+import { PaginationComponent } from './homepage/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ItemComponent } from './homepage/item/item.component';
     CarouselItemComponent,
     ResponsiveCarouselComponent,
     ItemComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
