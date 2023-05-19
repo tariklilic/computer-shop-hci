@@ -15,15 +15,16 @@ import { CarouselItemComponent } from './homepage/carousel-item/carousel-item.co
 import { HttpClientModule } from '@angular/common/http';
 import { ResponsiveCarouselComponent } from './homepage/responsive-carousel/responsive-carousel.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { ItemComponent } from './item/item.component';
+import { ItemComponent } from './items/item/item.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SortFilterComponent } from './search-results/sort-filter/sort-filter.component';
 import { CartComponent } from './cart/cart.component';
-import { CartItemComponent } from './cart-item/cart-item.component';
+import { CartItemComponent } from './items/cart-item/cart-item.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProfileItemComponent } from './items/profile-item/profile-item.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     CartItemComponent,
     ProfileComponent,
     ProductDetailsComponent,
+    ProfileItemComponent,
   ],
   imports: [
     BrowserModule,
