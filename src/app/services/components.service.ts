@@ -15,7 +15,7 @@ export class ComponentsService {
   }
 
   getComponents() {
-    return this.http.get<CarouselItem[]>('http://localhost:4200/assets/components/components.json').subscribe(result => {
+    return this.http.get<CarouselItem[]>('/assets/components/components.json').subscribe(result => {
       this.components.next(result);
     })
   }
