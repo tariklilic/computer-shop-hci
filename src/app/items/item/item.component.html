@@ -24,10 +24,9 @@
                 </div>
                 <div class="mt-2">
                     <div class="group">
-                        <button
+                        <button (click)="addToCart(products!.name)" routerLink='/cart'
                             class="w-20 sm:h-8 sm:w-22 bg-lime text-black flex items-center justify-center group-hover:bg-black">
-                            <span routerLink='/cart'
-                                class="mx-auto relative text-xs group-hover:text-lime group-active:text-limeclick">ADD
+                            <span class="mx-auto relative text-xs group-hover:text-lime group-active:text-limeclick">ADD
                                 TO CART</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="black"

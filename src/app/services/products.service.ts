@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Product } from '../models/Product.model';
 
 @Injectable({
@@ -81,9 +81,13 @@ export class ProductsService {
       } else {
         return 0;
       }
-
-
     });
-
   }
+
+  getProductByName(productName: string): Observable<Product | undefined> {
+    return this.http.get<Product[]>('/assets/products/products.json').pipe(
+      map(products => products.find(product => product.name === productName))
+    );
+  }
+
 }

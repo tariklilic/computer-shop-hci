@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartItem } from 'src/app/models/CartItem.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -7,20 +9,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CartItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() Item!: CartItem;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+
   }
 
   @Input() value: number = 0;
 
   increment() {
-    this.value++;
+    this.userService.updateQuantity(this.Item.product.name, this.Item.quantity + 1)
   }
 
   decrement() {
-    if (this.value > 0) {
-      this.value--;
+    if (this.Item.quantity > 1) {
+      this.userService.updateQuantity(this.Item.product.name, this.Item.quantity - 1)
     }
   }
 
