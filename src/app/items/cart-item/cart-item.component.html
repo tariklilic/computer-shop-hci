@@ -20,7 +20,7 @@
                     UNIT PRICE: ${{Item.product.price}}
                 </div>
                 <div class="mt-1 text-base sm:text-xl text-white">
-                    {{Item.product.price * Item.quantity}}
+                    {{Item.product.price * Item.quantity | number : '1.2-2'}}
                 </div>
                 <div class="mt-2 sm:mt-5 flex text-center">
                     <input [value]="Item.quantity" type="number"

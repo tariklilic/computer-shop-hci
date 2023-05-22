@@ -10,6 +10,7 @@ export class UserService {
 
   public cart = new BehaviorSubject<CartItem[]>([]);
   public totalPrice = new BehaviorSubject<number>(0);
+  public purchaseHistory = new BehaviorSubject<CartItem[]>([]);
 
   constructor(private productService: ProductsService) {
 
@@ -55,6 +56,17 @@ export class UserService {
     if (cart.length === 0) {
       this.totalPrice.next(0);
     }
+  }
+
+  Checkout() {
+    var cart = this.cart.getValue();
+    var purchaseHistory = this.purchaseHistory.getValue();
+    for (var i = 0; i < cart.length; i++) {
+      purchaseHistory.push(cart[i]);
+    }
+    this.purchaseHistory.next(purchaseHistory);
+    this.cart.next([]);
+    this.generateTotalPrice();
   }
 
 }
