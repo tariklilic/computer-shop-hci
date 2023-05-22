@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/Product.model';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-product-details',
@@ -15,13 +17,18 @@ export class ProductDetailsComponent implements OnInit {
 
   selectedImage: string = this.images[0];
 
+  activeItem: Product[] = [];
+
   showImage(image: string) {
     this.selectedImage = image;
   }
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.activeProduct.subscribe(result => {
+      this.activeItem[0] = result[0];
+    })
   }
 
 }

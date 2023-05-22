@@ -3,28 +3,27 @@
     <div class="grid grid-cols-12 gap-5">
         <div class="col-span-6">
             <div class="col-span-2 h-75 flex justify-center items-center">
-                <img class="max-h-72" rel="component image" [src]="selectedImage">
+                <img class="max-h-72" rel="component image" [src]="activeItem[0].cover">
             </div>
         </div>
         <div class="col-span-4 mt-8">
             <div class="mt-3 text-base sm:text-2xl lg:text-4xl">
-                Nvidia RTX 4090
+                {{activeItem[0].name}}
             </div>
             <div class="mb-8 text-lime text-xs sm:text-xl lg:text-2xl">
-                NVIDIA
+                {{activeItem[0].manufacturer}}
             </div>
             <div class="text-xxs sm:text-lg lg:text-xl">
-                > RTX 4090 brings an enormous leap in
-                performance, efficiency, and AI.
+                > {{activeItem[0].shortdescription}}
             </div>
             <div class="mt-5 text-base sm:text-2xl lg:text-4xl">
-                $1,200.00
+                ${{activeItem[0].price}}
             </div>
         </div>
         <div class="col-span-2  mt-8">
             <div class="h-full flex flex-col justify-between">
                 <button class="mt-3 w-16 sm:h-8 sm:w-22 bg-lime text-black flex items-center justify-center">
-                    <span class="mx-auto relative text-lg sm:text-2xl">9.8</span>
+                    <span class="mx-auto relative text-lg sm:text-2xl">{{activeItem[0].rating}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="md:ml-14 w-12 h-10 ml-12 absolute opacity-10">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -50,19 +49,13 @@
     <div class="grid grid-cols-12 gap-5">
         <div class="col-span-6 mt-5">
             <div class="grid grid-cols-2 ml-10 gap-0">
-                <div *ngFor="let image of images" class="w-full max-h-full bg-rect-black border border-light-gray card"
+                <div *ngFor="let image of activeItem[0].images"
+                    class="w-full max-h-full bg-rect-black border border-light-gray card"
                     [style.background-image]="'url(' + image + ')'" (click)="showImage(image)">
                 </div>
             </div>
         </div>
-        <div class="col-span-6 mt-5 md:text-base lg:text-lg">> The NVIDIA® GeForce RTX™ 4090 is the ultimate GeForce
-            GPU. It brings an
-            enormous
-            leap
-            in performance, efficiency, and AI-powered graphics. Experience ultra-high
-            performance gaming, incredibly detailed virtual worlds, unprecedented productivity, and new ways to create.
-            It’s powered by the NVIDIA Ada Lovelace architecture and
-            comes with 24 GB of G6X memory to deliver the ultimate experience for gamers and creators. </div>
+        <div class="col-span-6 mt-5 md:text-base lg:text-lg">> {{activeItem[0].longdescription}}</div>
     </div>
 </div>
 
@@ -74,12 +67,13 @@
     <div class="grid grid-cols-12 gap-5">
         <div class="col-span-12">
             <div class="col-span-2 h-64 flex justify-center items-center">
-                <img class="max-h-60" rel="component image" [src]="selectedImage">
+                <img class="max-h-60" rel="component image" [src]="activeItem[0].cover">
             </div>
         </div>
         <div class="col-span-12 mt-5">
             <div class="grid grid-cols-2 gap-0 mr-3 ml-3">
-                <div *ngFor="let image of images" class="w-full max-h-full bg-rect-black border border-light-gray card"
+                <div *ngFor="let image of activeItem[0].images"
+                    class="w-full max-h-full bg-rect-black border border-light-gray card"
                     [style.background-image]="'url(' + image + ')'" (click)="showImage(image)">
                 </div>
             </div>
@@ -89,7 +83,7 @@
         <div class="col-span-12 mt-8">
             <div class="grid grid-cols-12 gap-0">
                 <div class="col-span-7 mt-3 text-2xl lg:text-4xl">
-                    Nvidia RTX 4090
+                    {{activeItem[0].name}}
                 </div>
                 <div class="ml-auto">
                     <button class="mt-3 w-16 sm:h-8 sm:w-22 bg-lime text-black flex items-center justify-center">
@@ -103,15 +97,14 @@
                 </div>
             </div>
             <div class="mb-8 text-lime text-xl lg:text-2xl">
-                NVIDIA
+                {{activeItem[0].manufacturer}}
             </div>
             <div class="text-lg lg:text-xl">
-                > RTX 4090 brings an enormous leap in
-                performance, efficiency, and AI.
+                > {{activeItem[0].shortdescription}}
             </div>
             <div class="grid grid-cols-12 gap-0">
                 <div class="col-span-7 mt-5 text-base sm:text-2xl lg:text-4xl">
-                    $1,200.00
+                    ${{activeItem[0].price}}
                 </div>
                 <div class="mt-5">
                     <button
@@ -130,16 +123,7 @@
         </div>
     </div>
     <div class="grid grid-cols-12 gap-0 mb-8">
-        <div class="ml-3 mr-3 text-white col-span-12 mt-5 md:text-base lg:text-lg">> The NVIDIA® GeForce RTX™ 4090 is
-            the
-            ultimate
-            GeForce
-            GPU. It brings an
-            enormous
-            leap
-            in performance, efficiency, and AI-powered graphics. Experience ultra-high
-            performance gaming, incredibly detailed virtual worlds, unprecedented productivity, and new ways to create.
-            It’s powered by the NVIDIA Ada Lovelace architecture and
-            comes with 24 GB of G6X memory to deliver the ultimate experience for gamers and creators. </div>
+        <div class="ml-3 mr-3 text-white col-span-12 mt-5 md:text-base lg:text-lg">> {{activeItem[0].longdescription}}
+        </div>
     </div>
 </div>

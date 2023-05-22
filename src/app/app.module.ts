@@ -54,7 +54,7 @@ import { ProfileItemComponent } from './items/profile-item/profile-item.componen
     RouterModule,
     HttpClientModule,
     SlickCarouselModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

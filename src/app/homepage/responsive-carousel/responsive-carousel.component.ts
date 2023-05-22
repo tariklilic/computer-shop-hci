@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { CarouselItem } from 'src/app/models/CarouselItem.model';
 import { ComponentsService } from 'src/app/services/components.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-responsive-carousel',
@@ -35,7 +37,7 @@ export class ResponsiveCarouselComponent implements OnInit {
     ]
   };
 
-  constructor(private componentsService: ComponentsService) {
+  constructor(private componentsService: ComponentsService, private productsService: ProductsService, private router: Router) {
 
   }
 
@@ -43,7 +45,6 @@ export class ResponsiveCarouselComponent implements OnInit {
     this.componentsService.getComponents();
     this.componentsService.components.subscribe(result => {
       this.carouselItems = result;
-      console.log(result);
     })
   }
 
@@ -55,5 +56,12 @@ export class ResponsiveCarouselComponent implements OnInit {
 
   nextSlide() {
     this.slickModal.slickNext();
+  }
+
+  getComponent(component: string) {
+    this.productsService.activeComponent.next(component);
+    this.productsService.getSearchedProducts();
+    this.router.navigate(['/search']);
+
   }
 }
