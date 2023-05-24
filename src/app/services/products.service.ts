@@ -18,6 +18,9 @@ export class ProductsService {
   orderDirection: string = 'ASC';
   minPrice: number = 0;
   maxPrice: number = 0;
+  itemsPerPage = new BehaviorSubject<number>(10);
+  currentPage = new BehaviorSubject<number>(1);
+  totalItems = new BehaviorSubject<number>(0);
 
   constructor(private http: HttpClient) { }
 
@@ -28,6 +31,28 @@ export class ProductsService {
   }
 
   getSearchedProducts() {
+    this.http.get<Product[]>('/assets/products/products.json').subscribe(result => {
+      const searchParamLower = this.searchParam.toLowerCase();
+      const filteredProducts = result.filter(product => {
+        const isNameMatch = product.name.toLowerCase().includes(searchParamLower);
+        const isTypeMatch = this.activeComponent.value === 'Type' || product.type === this.activeComponent.value;
+        const isPriceValid = (this.minPrice === 0 || product.price >= this.minPrice) &&
+          (this.maxPrice === 0 || product.price <= this.maxPrice);
+        return isNameMatch && isTypeMatch && isPriceValid;
+      });
+
+      const sortedProducts = this.orderProducts(filteredProducts, this.orderBy, this.orderDirection);
+      this.totalItems.next(sortedProducts.length);
+
+      const startIndex = (this.currentPage.getValue() - 1) * this.itemsPerPage.getValue();
+      const endIndex = startIndex + this.itemsPerPage.getValue();
+      const paginatedProducts = sortedProducts.slice(startIndex, endIndex);
+
+      this.products.next(paginatedProducts);
+    });
+  }
+
+  getTotalNumberOfItems() {
     var searchProducts: Product[] = [];
     this.http.get<Product[]>('/assets/products/products.json').subscribe(result => {
       for (var i = 0; i < result.length; i++) {
@@ -52,15 +77,16 @@ export class ProductsService {
         }
       }
 
-      this.products.next(filteredProducts);
+      this.totalItems.next(filteredProducts.length);
     });
   }
+
+
 
   orderProducts(products: Product[], orderBy: string, orderDirection: string): Product[] {
     return products.sort((a, b) => {
       let aValue, bValue;
 
-      // Get the values to compare based on the selected orderBy value
       if (orderBy === 'rating') {
         aValue = a.rating;
         bValue = b.rating;
@@ -68,12 +94,10 @@ export class ProductsService {
         aValue = a.price;
         bValue = b.price;
       } else {
-        // Default: order by name
         aValue = a.name;
         bValue = b.name;
       }
 
-      // Compare the values and return the comparison result based on the orderDirection
       if (aValue < bValue) {
         return orderDirection === 'ASC' ? -1 : 1;
       } else if (aValue > bValue) {

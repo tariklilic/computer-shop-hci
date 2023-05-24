@@ -20,7 +20,7 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.getProducts();
+    this.productService.getSearchedProducts();
     this.productService.products.subscribe(result => {
       this.products = result;
     })

@@ -59,6 +59,7 @@ export class ResponsiveCarouselComponent implements OnInit {
   }
 
   getComponent(component: string) {
+    this.productsService.currentPage.next(1);
     this.productsService.activeComponent.next(component);
     this.productsService.getSearchedProducts();
     this.router.navigate(['/search']);

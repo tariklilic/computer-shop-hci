@@ -25,6 +25,8 @@ import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProfileItemComponent } from './items/profile-item/profile-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { ProfileItemComponent } from './items/profile-item/profile-item.componen
     HttpClientModule,
     SlickCarouselModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

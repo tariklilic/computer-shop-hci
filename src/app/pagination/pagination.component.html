@@ -10,21 +10,8 @@
                 </svg>
             </a>
         </li>
-        <li>
-            <a href="#" class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime">1</a>
-        </li>
-        <li>
-            <a href="#" class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime">2</a>
-        </li>
-        <li>
-            <a href="#" aria-current="page"
-                class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime">3</a>
-        </li>
-        <li>
-            <a href="#" class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime">4</a>
-        </li>
-        <li>
-            <a href="#" class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime">5</a>
+        <li *ngFor="let number of paginationArray" (click)="setPageNumber(number)">
+            <a class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime">{{number}}</a>
         </li>
         <li>
             <a href="#"
