@@ -11,7 +11,8 @@
             </a>
         </li>
         <li *ngFor="let number of paginationArray" (click)="setPageNumber(number)">
-            <a class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime">{{number}}</a>
+            <a
+                class="px-3 py-2 leading-tight bg-lime border border-black hover:bg-black hover:text-lime hover:cursor-pointer">{{number}}</a>
         </li>
         <li>
             <a href="#"
