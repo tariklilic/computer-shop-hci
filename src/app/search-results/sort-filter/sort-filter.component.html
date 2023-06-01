@@ -18,7 +18,7 @@
             </button>
         </div>
         <div id="namedatadropdown" [ngClass]="{'hidden': isDropdownHiddenName}"
-            class="z-10 hidden bg-lime text-black text-center shadow w-fit fixed">
+            class="z-10 hidden bg-lime text-black text-center shadow w-fit absolute">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>
                     <a (click)="orderByName('ASC')"
@@ -45,7 +45,7 @@
             </button>
         </div>
         <div id="ratingdatadropdown" [ngClass]="{'hidden': isDropdownHiddenRating}"
-            class="z-10 hidden bg-lime text-black text-center fixed shadow w-fit ">
+            class="z-10 hidden bg-lime text-black text-center absolute shadow w-fit ">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>
                     <a (click)="orderByRating('ASC')"
@@ -72,7 +72,7 @@
             </button>
         </div>
         <div id="pricedatadropdown" [ngClass]="{'hidden': isDropdownHiddenPrice}"
-            class="z-10 hidden bg-lime text-black text-center fixed shadow w-fit ">
+            class="z-10 hidden bg-lime text-black text-center absolute shadow w-fit ">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>
                     <a (click)="orderByPrice('ASC')"
@@ -111,7 +111,7 @@
             </button>
         </div>
         <div id="typedatadropdown" [ngClass]="{'hidden': isDropdownHiddenType}"
-            class="z-10 hidden bg-lime text-black text-center fixed shadow w-fit ">
+            class="z-10 hidden bg-lime text-black text-center absolute shadow w-fit ">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>
                     <a (click)="getComponent('Graphic Card')"
